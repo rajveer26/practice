@@ -1,5 +1,6 @@
 package practice2;
 
+import java.nio.CharBuffer;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -105,6 +106,18 @@ public class InfosysPractice
                     .flatMap(str -> Arrays.stream(str.split("\\s+")))
                     .filter(word -> word.equals(targetWord))
                     .count();
+
+            int nn = 234;
+
+            long productInt = String.valueOf(nn).chars()
+                    .map(Character::getNumericValue).reduce((i1, i2) -> i1 * i2).orElse(0);
+
+            long sumInt = String.valueOf(nn).chars().map(Character :: getNumericValue).reduce(Integer::sum).orElse(0);
+
+
+
+            System.out.println(productInt - sumInt);
+
         }
 
         catch (Exception e)
